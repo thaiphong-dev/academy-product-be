@@ -43,7 +43,7 @@ import { JwtPayload } from './jwt-payload.interface';
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(private readonly userService: UserService) {
     // Ensure JWT_SECRET is defined before using it
-    const secret = process.env.JWT_SECRET;
+    const secret = 'phong';
     if (!secret) {
       throw new UnauthorizedException('JWT secret is not defined');
     }

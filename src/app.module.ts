@@ -12,13 +12,17 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     UserModule,
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: 'localhost',
+      host: 'DESKTOP-P12J8O0\\PHONG1', // Use your server's name here
       port: 1433,
-      username: 'your-username',
-      password: 'your-password',
-      database: 'your-database',
+      username: 'sa',
+      password: '123',
+      database: 'nambeacademy',
       synchronize: true,
       entities: [User],
+      extra: {
+        encrypt: true, // Enable encryption (recommended for security)
+        trustServerCertificate: true, // Disable SSL verification for self-signed certificates
+      },
     }),
   ],
 })
